@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>PORTADA</title>
+  
+
+  
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d0e6; /* Rosa claro */
+            color: #333;
+            text-align: center;
+        }
+        h1, h2, p {
+            color: #c34c7d; /* Un tono de rosa más fuerte */
+        }
+        .info {
+            background-color: #fff; /* Fondo blanco para la caja de información */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .widget {
+            font-size: 1.2em;
+            background-color: #f4c2d1; /* Fondo rosa suave para los widgets */
+            padding: 15px;
+            border-radius: 8px;
+            width: 80%;
+            margin: 20px auto;
+        }
+        .counter {
+            background-color: #fff;
+            border: 2px solid #c34c7d;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .widget-time {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style></head><body>
+<br>
+
+
+
+
+    
+
+
+
+
+    
+    
+    
+
+
+    <!-- Contador de visitas -->
+    
+<div class="widget">
+        <p><strong>Contador de visitas:</strong></p>
+        <div class="counter" id="visitCount">0</div>
+    </div>
+
+
+    <!-- Widget de la hora -->
+    
+<div class="widget">
+        <div id="hora" class="widget-time">
+            <!-- Hora dinámica -->
+        </div>
+    </div>
+
+
+    <!-- Información del estudiante -->
+    
+<h1><img style="width: 308px; height: 94px;" src="file:///C:/Users/Alumno/ARU%20Y%20BERE%20%206101/IMAGENES/images.png" alt="images.png"></h1>
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><a href="PORTADA.html">PORTADA</a><br>
+      </td>
+      <td style="vertical-align: top;"><a href="INICIO.html">INICIO</a><br>
+      </td>
+      <td style="vertical-align: top;"><a href="INTRODUCCION.html">INTRODUCCION</a><br>
+      </td>
+      <td style="vertical-align: top;"><a href="DESARROLLO.html">DESARROLLO</a><br>
+      </td>
+      <td style="vertical-align: top;"><a href="CONCLUSION.html">CONCLUSION</a> <br>
+      </td>
+      <td style="vertical-align: top;"><a href="FINAL.html">FINAL</a><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h1>Informe General de Aprendizajes en Tecnología, Informática y Diseño</h1>
+
+
+    
+<div class="info">
+        <p><strong>Nombres del Estudiante:</strong> Gerardo Nava, Melany Arumy Tellez Islas, Berenice</p>
+        <p><strong>Curso:</strong> Sexto Semestre 2025-A</p>
+        <p><strong>Grupo:</strong> 6101</p>
+        <p><strong>Institución:</strong> Colegio de Bachilleres Del Estado de Hidalgo, Mineral de la Reforma</p>
+        <p><strong>Fecha:</strong> 20/05/2025</p>
+<p><img style="width: 227px; height: 404px;" src="file:///C:/Users/Alumno/ARU%20Y%20BERE%20%206101/IMAGENES/WhatsApp%20Image%202025-05-20%20at%2010.26.30%20AM.jpeg" alt="WhatsApp%20Image%202025-05-20%20at%2010.26.30%20AM.jpeg"></p>
+
+    </div>
+
+
+    
+<script>
+        // Contador de visitas
+        if (localStorage.getItem('visitCount')) {
+            var visits = parseInt(localStorage.getItem('visitCount'));
+        } else {
+            var visits = 0;
+        }
+        visits++;
+        localStorage.setItem('visitCount', visits);
+        document.getElementById('visitCount').innerText = visits;
+
+        // Widget de la hora
+        function actualizarHora() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            var timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('hora').innerText = timeString;
+        }
+
+        setInterval(actualizarHora, 1000);  // Actualiza cada segundo
+    </script>
+
+</body></html>
